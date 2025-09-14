@@ -3,21 +3,21 @@ import { cargarUsuarios,cargarUsuariosError,cargarUsuariosSuccess } from '../act
 import { Usuario } from '../../models/usuario';
 
 export interface UsuariosState {
-    users: Usuario[]
+    users: Usuario[],
     loaded:boolean,
     loading:boolean,
     error:any
 }
 
-export const usuariosInitialState: UsuariosState = {
-   users: [] ,
+export const usersInitialState: UsuariosState = {
+    users: [] ,
     loaded:false,
     loading:false,
     error:null
 }
 
 const _usuariosReducer = createReducer(
-   usuariosInitialState,
+   usersInitialState,
 
     on(cargarUsuarios, state => ({ ...state, loading: true })),
 
