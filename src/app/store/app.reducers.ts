@@ -3,9 +3,11 @@ import * as reducers  from './reducers'
 
 
 export interface AppState {
-   users:reducers.UsuariosState
+   users:reducers.UsuariosState,
+   usuario: reducers.UsuarioState
 }
 
 export const appReducers: ActionReducerMap<AppState> = {
-   users:reducers.usuariosReducer
+   users:reducers.usuariosReducer,
+   usuario: reducers.usuarioReducer
 }

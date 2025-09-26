@@ -1,4 +1,5 @@
-import { UsuarioEffects } from "./usuarios.effects";
+import { UsuariosEffects } from "./usuarios.effects";
+import { UsuarioEffects } from "./usuario.effects";
 
 
-export const EffectsArray: any[] = [UsuarioEffects];
+export const EffectsArray: any[] = [UsuariosEffects,UsuarioEffects];

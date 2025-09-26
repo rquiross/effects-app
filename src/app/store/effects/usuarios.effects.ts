@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable, OnInit } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { cargarUsuarios, cargarUsuariosError, cargarUsuariosSuccess } from '../actions/usuarios.actions';
 
@@ -7,13 +7,20 @@ import { catchError, map, mergeMap, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
 
 
+console.log('UsuarioEffects loaded');
 @Injectable()
-export class UsuarioEffects {
+export class UsuariosEffects implements OnInit {
 
+   private actions$ = inject(Actions);
    constructor(
-    private actions$: Actions,
+    //private actions$: Actions,
     private usuarioService: UsuarioService
-   ) {}
+   ) {
+       console.log('UsuarioEffects constructor', this.usuarioService);
+   }
+  ngOnInit(): void {
+     console.log('UsuarioService in effect:', this.usuarioService);
+  }
 
    cargarUsuarios$ = createEffect(
     () => this.actions$.pipe(

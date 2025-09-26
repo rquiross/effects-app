@@ -1,1 +1,13 @@
-<p>usuario works!</p>
+<div class="row">
+  <div class="col-4">
+    <img [src]="usuario.avatar" alt="avatar" class="img-thumbnail">
+  </div>
+
+  <div class="div">
+    <ul class="list-group">
+      <li class="list-group-item">ID: {{ usuario.id }}</li>
+      <li class="list-group-item">Nombre: {{ usuario.first_name }} {{ usuario.last_name }}</li>
+      <li class="list-group-item">Email: {{ usuario.email }}</li>
+    </ul>
+  </div>
+</div>

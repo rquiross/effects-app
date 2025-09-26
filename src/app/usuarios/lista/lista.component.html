@@ -1,6 +1,30 @@
-<div class="card-columns">
+<div class="alert alert-info text-center" role="alert"
+*ngIf="loading">
+  <h4 class="alert-heading">Cargando</h4>
 
-  <div class="card" *ngFor="let user of users">
+  <p>
+    <i class="fa fa-spinner fa-spin fa-2x" *ngIf="loading"></i>
+    Lista de usuarios obtenidos desde el servicio REST</p>
+  <hr>
+  <p class="mb-0">Usando efectos y ngrx</p>
+</div>
+
+<div class="alert alert-danger text-center" role="alert"
+*ngIf="error">
+  <h4 class="alert-heading">Error</h4>
+
+  <p>
+    <i class="fa fa-exclamation-triangle fa-2x" *ngIf="error"></i>
+    {{ error | json}}</p>
+  <hr>
+  <p class="mb-0">Usando efectos y ngrx</p>
+</div>
+
+
+
+
+<div class="card-columns" *ngIf="!loading">
+  <div class="card" *ngFor="let user of usuarios">
     <img class="card-img-top" [src]="user.avatar">
     <div class="card-body">
       <h5 class="card-title"> {{ user.first_name }} {{ user.last_name }} </h5>
